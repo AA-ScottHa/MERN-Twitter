@@ -1,0 +1,5 @@
+node_modules/
+
+credentials.txt
+key.js
+package-lock.json
