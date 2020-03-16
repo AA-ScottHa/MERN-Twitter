@@ -6,7 +6,6 @@ const passport = require('passport');
 const db = require("./config/key.js").mongoURI;
 const users = require("./routes/api/users.js");
 const tweets = require("./routes/api/tweets.js");
-const User = require("./models/User.js");
 
 const app = express();
 

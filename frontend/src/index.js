@@ -2,10 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import jwt_decode from 'jwt-decode';
 
-// import './index.css';
-// import App from './App';
-// import * as serviceWorker from './serviceWorker';
-
 import Root from './components/root.js';
 import configureStore from './store/store.js';
 import { setAuthToken } from './util/session_api_util.js';
@@ -25,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentTime = Date.now() / 1000;
 
     if (decodedUser.exp < currentTime) {
-      // store.dispatch(logout());
+      store.dispatch(logout());
       window.location.href = '/login';
     }
   } else {
@@ -36,9 +32,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ReactDOM.render(<Root store={ store } />, root);
 });
-
-// ReactDOM.render(<App />, document.getElementById('root'));
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();
